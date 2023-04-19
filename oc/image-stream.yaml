@@ -1,0 +1,5 @@
+kind: ImageStream
+apiVersion: image.openshift.io/v1
+metadata:
+  name: cypress-npm
+  namespace: c0cce6-tools

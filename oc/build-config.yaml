@@ -1,0 +1,20 @@
+apiVersion: build.openshift.io/v1
+kind: BuildConfig
+metadata:
+  name: cypress-npm
+  labels:
+    app: cypress-npm
+spec:
+  source:
+    type: Git
+    git:
+      uri: https://github.com/alex-struk/cypress-digimod-npm
+    contextDir: 
+  strategy:
+    type: Docker                      
+    dockerStrategy:
+      dockerfilePath: ./Dockerfile
+  output:
+    to:
+      kind: ImageStreamTag
+      name: cypress-npm:latest
